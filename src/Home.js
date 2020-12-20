@@ -56,28 +56,18 @@ class Home extends Component {
             <Route path="/contact" component={Contact} />
           </Switch>
         </Router>
-        <input
-          className="input"
-          type="text"
-          placeholder="Search for country.."
-          onChange={(e) => {
+        <input className="input" type="text" placeholder="Search for country..">
+          onChange=
+          {(e) => {
             this.setState({ country: e.target.value });
           }}
-          onKeyDown={(e) =>
+          onKeyDown=
+          {(e) =>
             e.key === "Enter" ? this.fetchData(this.state.country) : null
           }
-        ></input>
+        </input>
         <div style={{ display: "flex" }}>
-          <p
-            style={{
-              fontSize: "1.5rem",
-              justifyContent: "center",
-              margin: "2rem auto",
-              padding: "0.5rem 1rem",
-              textAlign: "center",
-              border: "8px solid #fff",
-            }}
-          >
+          <p className={this.state.country.length === 2 ? "country" : null}>
             {this.state.country.length === 2
               ? lookup.byIso(this.state.country).country
               : null}
@@ -92,7 +82,7 @@ class Home extends Component {
             />
           </div>
         ) : (
-          <h1 style={{ textAlign: "center" }}>Loading...</h1>
+          <h1 style={{ textAlign: "center", padding: "1rem" }}>Loading...</h1>
         )}
       </div>
     );

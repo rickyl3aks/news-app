@@ -6,13 +6,9 @@ function Navbar() {
     <div>
       <ul className="navbar">
         <li>
-          <Link to="/">Website still under construction 🚨</Link>
-        </li>
-        <li>
-          <Link to="/about">About us</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact us</Link>
+          <Link to="/">
+            Website still under construction 🚨 sorry for any inconvenience
+          </Link>
         </li>
       </ul>
     </div>

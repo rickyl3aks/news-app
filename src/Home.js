@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import Articles from "./Articles";
 import Navbar from "./Navbar";
-import About from "./About";
-import Contact from "./Contact";
 import Error from "./Error";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.css";
 
@@ -49,23 +46,21 @@ class Home extends Component {
         <h1 id="title" style={{ textAlign: "center", margin: "2rem" }}>
           Get News in real time in the local language! 📰
         </h1>
-        <Router>
-          <Navbar />
-          <Switch>
-            <Route path="/about" component={About} />
-            <Route path="/contact" component={Contact} />
-          </Switch>
-        </Router>
-        <input className="input" type="text" placeholder="Search for country..">
-          onChange=
-          {(e) => {
+
+        <Navbar />
+        <input
+          className="input"
+          type="text"
+          placeholder="Search for country...(Country code)"
+          maxlength="2"
+          title="Two letter country code"
+          onChange={(e) => {
             this.setState({ country: e.target.value });
           }}
-          onKeyDown=
-          {(e) =>
+          onKeyDown={(e) =>
             e.key === "Enter" ? this.fetchData(this.state.country) : null
           }
-        </input>
+        />
         <div style={{ display: "flex" }}>
           <p className={this.state.country.length === 2 ? "country" : null}>
             {this.state.country.length === 2

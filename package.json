@@ -1,5 +1,5 @@
 {
-  "name": "wildfire_tracker",
+  "name": "news_app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -42,8 +42,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages-deploy": "^0.5.1"
   }
 }

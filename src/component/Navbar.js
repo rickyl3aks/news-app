@@ -4,7 +4,7 @@ function Navbar() {
   return (
     <div>
       <ul className="navbar">
-        <li>Website still under construction 🚨 sorry for any inconvenience</li>
+        <li>Website under construction 🚧 sorry for any inconvenience</li>
       </ul>
     </div>
   );

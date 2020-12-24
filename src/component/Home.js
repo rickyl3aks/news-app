@@ -11,6 +11,7 @@ class Home extends Component {
       article: [],
       isLoading: false,
       country: "gbb",
+      count: "",
     };
   }
 
@@ -28,6 +29,16 @@ class Home extends Component {
         article: data.articles,
         isLoading: true,
       });
+      var count = () => {
+        fetch("https://api.countapi.xyz/hit/news_app.git/123")
+          .then((res) => res.json())
+          .then((res) =>
+            this.setState({
+              count: res.value,
+            })
+          );
+      };
+      count();
     } catch (e) {
       this.setState({
         error: true,
@@ -48,19 +59,16 @@ class Home extends Component {
           className="input"
           type="text"
           placeholder="Search for country...(Country code)"
-          maxlength="2"
+          maxLength="2"
           title="Two letter country code"
           onChange={(e) => {
             this.setState({ country: e.target.value });
           }}
           onKeyDown={(e) =>
-            e.key === "Enter"
-              ? this.fetchData(
-                  this.state.country ? this.state.country : alert("sotty")
-                )
-              : null
+            e.key === "Enter" ? this.fetchData(this.state.country) : null
           }
         />
+        <p className="count">You have {100 - this.state.count} requests left</p>
         <div style={{ display: "flex" }}>
           <p className={this.state.country.length === 2 ? "country" : null}>
             {this.state.country.length === 2

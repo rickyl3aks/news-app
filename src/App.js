@@ -1,10 +1,6 @@
 import React, { Component } from "react";
-import Articles from "./Articles";
-import Navbar from "./Navbar";
-import About from "./About";
-import Contact from "./Contact";
-import Home from "./Home";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Navbar from "./component/Navbar";
+import Home from "./component/Home";
 
 import "./App.css";
 
@@ -12,12 +8,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Router>
-          <Navbar />
-          <Switch>
-            <Route path="/" component={Home} />
-          </Switch>
-        </Router>
+        <Navbar />
+        <Home />
       </div>
     );
   }

@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import Articles from "./Articles";
 import Navbar from "./Navbar";
-import Error from "./Error";
-
-import "./App.css";
 
 const lookup = require("country-code-lookup");
 
@@ -22,10 +19,10 @@ class Home extends Component {
   }
 
   fetchData = async () => {
-    const res = await fetch(
-      `http://newsapi.org/v2/top-headlines?country=${this.state.country}&apiKey=9ee9ba23b50b4fd9b2c7d74ec0c3be1b`
-    );
     try {
+      const res = await fetch(
+        `http://newsapi.org/v2/top-headlines?country=${this.state.country}&apiKey=9ee9ba23b50b4fd9b2c7d74ec0c3be1b`
+      );
       const data = await res.json();
       this.setState({
         article: data.articles,
@@ -37,7 +34,6 @@ class Home extends Component {
       });
       alert("sorry");
     }
-    <Error />;
   };
 
   render() {
@@ -58,7 +54,11 @@ class Home extends Component {
             this.setState({ country: e.target.value });
           }}
           onKeyDown={(e) =>
-            e.key === "Enter" ? this.fetchData(this.state.country) : null
+            e.key === "Enter"
+              ? this.fetchData(
+                  this.state.country ? this.state.country : alert("sotty")
+                )
+              : null
           }
         />
         <div style={{ display: "flex" }}>

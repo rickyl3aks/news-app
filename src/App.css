@@ -48,8 +48,8 @@ body {
 
 .navbar {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  padding: 1rem;
+  font-size: 1.3rem;
   overflow: hidden;
   display: flex;
   background-color: #c2c2c2;

@@ -102,6 +102,12 @@ li a:hover {
   border: 8px solid #fff;
 }
 
+.count {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
 @media only screen and (max-width: 750px) {
   .news {
     grid-template-columns: repeat(1, 1fr);

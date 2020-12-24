@@ -7,6 +7,7 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.2.2",
     "axios": "^0.21.0",
+    "countapi": "^1.0.0",
     "country-code-lookup": "0.0.18",
     "font-awesome": "^4.7.0",
     "react": "^17.0.1",

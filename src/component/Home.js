@@ -22,7 +22,9 @@ class Home extends Component {
   fetchData = async () => {
     try {
       const res = await fetch(
-        `http://newsapi.org/v2/top-headlines?country=${this.state.country}&apiKey=9ee9ba23b50b4fd9b2c7d74ec0c3be1b`
+        `http://newsapi.org/v2/top-headlines?country=${
+          this.state.country ? this.state.country : null
+        }&apiKey=9ee9ba23b50b4fd9b2c7d74ec0c3be1b`
       );
       const data = await res.json();
       this.setState({
@@ -70,11 +72,13 @@ class Home extends Component {
         />
         <p className="count">You have {100 - this.state.count} requests left</p>
         <div style={{ display: "flex" }}>
-          <p className={this.state.country.length === 2 ? "country" : null}>
-            {this.state.country.length === 2
-              ? lookup.byIso(this.state.country).country
-              : null}
-          </p>
+          {
+            <p className={this.state.country.length === 2 ? "country" : null}>
+              {this.state.country.length === 2
+                ? lookup.byIso(this.state.country).country
+                : null}
+            </p>
+          }
         </div>
 
         {this.state.isLoading ? (

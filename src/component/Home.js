@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Articles from "./Articles";
 import Navbar from "./Navbar";
+import Loading from "./Loading";
 
 const lookup = require("country-code-lookup");
 
@@ -10,8 +11,7 @@ class Home extends Component {
     this.state = {
       article: [],
       isLoading: false,
-      country: "gbb",
-      count: "",
+      country: "",
     };
   }
 
@@ -28,11 +28,18 @@ class Home extends Component {
       );
       const data = await res.json();
       this.setState({
-        article: data.articles,
-        isLoading: true,
+        isLoading: false,
       });
+
+      setTimeout(() => {
+        this.setState({
+          article: data.articles,
+          isLoading: true,
+        });
+      }, 1500);
+
       var count = () => {
-        fetch("https://api.countapi.xyz/hit/news_app.git/123")
+        fetch("https://api.countapi.xyz/hit/news_app.git/128")
           .then((res) => res.json())
           .then((res) =>
             this.setState({
@@ -71,26 +78,28 @@ class Home extends Component {
           }
         />
         <p className="count">You have {100 - this.state.count} requests left</p>
-        <div style={{ display: "flex" }}>
-          {
-            <p className={this.state.country.length === 2 ? "country" : null}>
-              {this.state.country.length === 2
-                ? lookup.byIso(this.state.country).country
-                : null}
-            </p>
-          }
-        </div>
-
-        {this.state.isLoading ? (
-          <div>
-            <Articles
-              article={this.state.article}
-              display={this.state.showArticle}
-            />
+        <div>
+          <div style={{ display: "flex" }}>
+            {
+              <p className={this.state.country.length === 2 ? "country" : null}>
+                {this.state.country.length === 2
+                  ? lookup.byIso(this.state.country).country
+                  : null}
+              </p>
+            }
           </div>
-        ) : (
-          <h1 style={{ textAlign: "center", padding: "1rem" }}>Loading...</h1>
-        )}
+
+          {this.state.isLoading ? (
+            <div>
+              <Articles
+                article={this.state.article}
+                display={this.state.showArticle}
+              />
+            </div>
+          ) : (
+            <Loading />
+          )}
+        </div>
       </div>
     );
   }

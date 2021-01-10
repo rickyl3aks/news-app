@@ -1,7 +1,10 @@
 import React, { Component } from "react";
-import Articles from "./Articles";
-import Navbar from "./Navbar";
-import Loading from "./Loading";
+import Articles from "../articles/Articles";
+import Navbar from "../navbar/Navbar";
+import Loading from "../loading/Loading";
+
+/* styles */
+import "./home.css";
 
 const lookup = require("country-code-lookup");
 
@@ -19,6 +22,7 @@ class Home extends Component {
     this.fetchData();
   }
 
+  /* fetching data from news api */
   fetchData = async () => {
     try {
       const res = await fetch(
@@ -38,6 +42,7 @@ class Home extends Component {
         });
       }, 1500);
 
+      /* REVIEW counting how many times left only 100perday */
       var count = () => {
         fetch("https://api.countapi.xyz/hit/news_app.git/128")
           .then((res) => res.json())
@@ -59,7 +64,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h1 id="title" style={{ textAlign: "center", margin: "2rem" }}>
+        <h1 style={{ textAlign: "center", margin: "2rem" }}>
           Get News in real time in the local language! 📰
         </h1>
 

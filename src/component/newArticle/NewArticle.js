@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+/* style */
+import "./newarticle.css";
+
 function NewArticle({ a }) {
   const [display, setDispaly] = useState(false);
   let time = new Date().toISOString();

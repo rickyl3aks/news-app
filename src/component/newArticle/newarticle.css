@@ -1,0 +1,25 @@
+.container {
+  border-radius: 10px;
+  padding-bottom: 1rem;
+  background-color: #ecebeb;
+  color: #232323;
+  box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.7);
+  margin: 20px;
+}
+
+.container img {
+  border-radius: 10px 10px 0 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.info {
+  border-left: 5px solid #232323;
+  margin-left: 1rem;
+  padding-left: 1rem;
+}
+
+.article {
+  display: none;
+}

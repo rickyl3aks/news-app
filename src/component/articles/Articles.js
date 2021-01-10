@@ -1,5 +1,7 @@
 import React from "react";
-import NewArticle from "./NewArticle";
+import NewArticle from "../newArticle/NewArticle";
+/* style */
+import "./articles.css";
 
 function Articles(props) {
   return (

@@ -1,0 +1,10 @@
+.news {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media only screen and (max-width: 750px) {
+  .news {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

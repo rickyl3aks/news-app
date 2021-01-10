@@ -1,0 +1,33 @@
+.count {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.country {
+  font-size: 1.5rem;
+  justify-content: center;
+  margin: 2rem auto;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  border: 8px solid #fff;
+}
+
+.input {
+  display: block;
+  margin: auto;
+  width: 50%;
+  border-radius: 50px;
+  outline: none;
+  padding: 15px;
+  border: none;
+  font-size: 1rem;
+  background-image: url("../../images/search_icon.png");
+  background-position: right 5% bottom 50%;
+  background-repeat: no-repeat;
+  background-size: 35px;
+}
+
+.input:hover {
+  box-shadow: 2px 3px 3px 2px rgba(0, 0, 0, 0.7);
+}

@@ -12,10 +12,6 @@ class Loading extends Component {
           }}
         >
           <div>
-            {/*  <div className="skeleton"></div>
-            <div className="skeleton-p"></div>
-            <div className="skeleton-pTwo"></div>
-            <div className="skeleton-pThree"></div> */}
             <div className="skeleton">
               <div className="card">
                 <div className="card__image loading"></div>

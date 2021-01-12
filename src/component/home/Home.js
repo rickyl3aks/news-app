@@ -30,6 +30,7 @@ class Home extends Component {
           this.state.country ? this.state.country : null
         }&apiKey=9ee9ba23b50b4fd9b2c7d74ec0c3be1b`
       );
+
       const data = await res.json();
       this.setState({
         isLoading: false,
@@ -37,14 +38,14 @@ class Home extends Component {
 
       setTimeout(() => {
         this.setState({
-          article: data.articles,
           isLoading: true,
+          article: data.articles,
         });
       }, 1500);
 
       /* REVIEW counting how many times left only 100perday */
       var count = () => {
-        fetch("https://api.countapi.xyz/hit/news_app.git/128")
+        fetch("https://api.countapi.xyz/hit/news_app.git/228")
           .then((res) => res.json())
           .then((res) =>
             this.setState({
@@ -102,6 +103,7 @@ class Home extends Component {
               />
             </div>
           ) : (
+            /*   <Loading /> */
             <Loading />
           )}
         </div>

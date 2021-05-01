@@ -3,7 +3,7 @@ import React, { useState } from "react";
 /* style */
 import "./newarticle.css";
 
-function NewArticle({ a }) {
+const NewArticle = ({ a }) => {
   const [display, setDispaly] = useState(false);
   let time = new Date().toISOString();
   let hour = time.substring(11, 13);
@@ -36,7 +36,8 @@ function NewArticle({ a }) {
                 : newsTime - hour + " hr. ago"}
             </p>
           </div>
-          <div className={!display ? "article" : ""}>
+
+          <div className={!display ? "article" : "animation"}>
             <p style={{ padding: "1rem" }}>
               {a.description !== null ? a.description : "--not available--"}
             </p>
@@ -46,7 +47,9 @@ function NewArticle({ a }) {
                 String(a.description).substring(0, 50) || a.content === null
                 ? null
                 : String(a.content).split("[")[0]}
-              <a href={a.url}>Read more</a>
+              <a rel="noreferrer" href={a.url} target="_blank">
+                Read more
+              </a>
             </p>
 
             <br />
@@ -61,6 +64,6 @@ function NewArticle({ a }) {
       </div>
     </div>
   );
-}
+};
 
 export default NewArticle;

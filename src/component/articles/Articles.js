@@ -3,14 +3,18 @@ import NewArticle from "../newArticle/NewArticle";
 /* style */
 import "./articles.css";
 
-function Articles(props) {
+const Articles = (props) => {
   return (
     <div className="news">
       {props.article.map((a) => {
-        return <NewArticle key={a.title} a={a} />;
+        return (
+          <div>
+            <NewArticle key={a.urlToImage} a={a} />
+          </div>
+        );
       })}
     </div>
   );
-}
+};
 
 export default Articles;

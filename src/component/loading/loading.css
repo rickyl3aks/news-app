@@ -1,35 +1,3 @@
-/* .skeleton {
-  width: 350px;
-  height: 200px;
-  border-radius: 10px;
-  background-color: #fff;
-} */
-
-/* skeleton loading */
-/* .skeleton-p {
-  margin-top: 10px;
-  width: 350px;
-  height: 20px;
-  border-radius: 10px;
-  background-color: #fff;
-}
-.skeleton-pTwo {
-  margin-top: 40px;
-  width: 250px;
-  height: 20px;
-  border-radius: 10px;
-  background-color: rgb(104, 49, 49);
-}
-.skeleton-pThree {
-  margin-top: 10px;
-  width: 250px;
-  height: 20px;
-  border-radius: 10px;
-  background-color: #fff;
-  opacity: 1;
-  animation: fade 2s;
-} */
-
 /* Card styles */
 .skeleton {
   display: grid;
@@ -43,6 +11,7 @@
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.7);
+  z-index: -1;
 }
 
 /* Card image loading */
@@ -52,7 +21,7 @@
 }
 
 .card_image.loading {
-  height: 300px;
+  height: 250px;
   width: 100%;
 }
 
@@ -113,7 +82,13 @@
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 900px) {
+  .skeleton {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 650px) {
   .skeleton {
     grid-template-columns: repeat(1, 1fr);
   }

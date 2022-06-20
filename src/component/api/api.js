@@ -3,7 +3,7 @@ export const fetchData = async () => {
     const res = await fetch(
       `http://newsapi.org/v2/top-headlines?country=${
         this.state.country ? this.state.country : null
-      }&apiKey=9ee9ba23b50b4fd9b2c7d74ec0c3be1b`
+      }&apiKey=${process.env.REACT_APP_API_KEY}`
     );
     const data = await res.json();
     this.setState({
@@ -24,6 +24,6 @@ export const fetchData = async () => {
     this.setState({
       error: true,
     });
-    alert("sorry");
+    alert("sorry something went wrong with the API call...");
   }
 };
